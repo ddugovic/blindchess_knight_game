@@ -100,8 +100,13 @@ kn = Knight(knights_position,queen_position)
 
 print(f"your position with the knight is {computer_to_human(kn.position())}")
 print(f"the queen is on {computer_to_human(queen_position)}")
+print("Please move the knight to get to the queen using legal moves and avoiding the queens gaze. This may be impossible, you can quit if it is")
+move_count = 0
 while not kn.check_win():
     move = input("please type in a move: \n")
     move_comp = human_to_computer(move)
     kn.move_knight(move_comp)
-print("well done you got the queen!")
+    move_count+=1
+print("WIN!!")
+print(f" \n \n well done you got the queen in {move_count} moves!! ")
+print("The knight can get from anywhere on the board to anywhere else on the board in 6 moves, however the queen can prevent this")
